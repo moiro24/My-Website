@@ -9,7 +9,6 @@ import Newsletter from "@/components/Newsletter";
 import Pricing from "@/components/Pricing";
 import Support from "@/components/Support";
 import { Metadata } from "next";
-import { integrations } from "../../../integrations.config";
 
 export const metadata: Metadata = {
   title: "AI Tool - Next.js Template for AI Tools",
@@ -29,7 +28,7 @@ export default function Home() {
       </section>
       <Clients />
       <Support />
-      {integrations.isSanityEnabled && <BlogSection />}
+      <BlogSection />
       <CallToAction />
       <Newsletter />
     </>

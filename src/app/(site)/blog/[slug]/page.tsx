@@ -1,6 +1,5 @@
 import Breadcrumb from '@/components/Breadcrumb';
-import { getPost, imageBuilder } from '@/sanity/sanity-utils';
-import { PortableText } from '@portabletext/react';
+import { blogPosts } from '@/data/blogData';
 import Image from 'next/image';
 import Link from 'next/link';
 import { RelatedArticles } from './_components/related-articles';
@@ -13,7 +12,7 @@ type Props = {
 export async function generateMetadata(props: Props) {
   const params = await props.params;
   const { slug } = params;
-  const post = await getPost(slug);
+  const post = blogPosts.find((item) => item.slug === slug);
   const siteURL = process.env.SITE_URL;
   const siteName = process.env.SITE_NAME;
   const authorName = process.env.AUTHOR_NAME;
@@ -44,7 +43,7 @@ export async function generateMetadata(props: Props) {
         siteName: siteName,
         images: [
           {
-            url: imageBuilder(post.mainImage).url(),
+            url: typeof post?.mainImage === 'string' ? post.mainImage : '/images/blog/default.jpg',
             width: 1800,
             height: 1600,
             alt: post.title,
@@ -60,7 +59,7 @@ export async function generateMetadata(props: Props) {
         description: `${post.metadata?.slice(0, 136)}...`,
         creator: `@${authorName}`,
         site: `@${siteName}`,
-        images: [imageBuilder(post?.mainImage).url()],
+        images: [typeof post?.mainImage === 'string' ? post.mainImage : '/images/blog/default.jpg'],
         url: `${siteURL}/blog/${post?.slug?.current}`,
       },
     };
@@ -75,7 +74,7 @@ export async function generateMetadata(props: Props) {
 export default async function BlogDetails(props: Props) {
   const params = await props.params;
   const { slug } = params;
-  const post = await getPost(slug);
+  const post = blogPosts.find((item) => item.slug === slug);
 
   return (
     <>
@@ -84,8 +83,8 @@ export default async function BlogDetails(props: Props) {
       <section className='pt-20 pb-17.5 lg:pt-25 lg:pb-22.5 xl:pb-27.5'>
         <div className='relative mx-auto mb-10 aspect-97/44 w-full max-w-[1170px] overflow-hidden rounded-2xl px-4 sm:px-8 md:rounded-3xl xl:px-0'>
           <Image
-            src={imageBuilder(post?.mainImage).url()}
-            alt={post.title}
+            src={typeof post?.mainImage === 'string' ? post.mainImage : '/images/blog/default.jpg'}
+            alt={post?.title || 'Blog post'}
             fill
           />
         </div>
@@ -163,7 +162,7 @@ export default async function BlogDetails(props: Props) {
             </h1>
 
             <div className='blog-details mb-12'>
-              <PortableText value={post?.body || []} />
+              <p>{post?.body}</p>
             </div>
 
             <SharePost title={post?.title} description={post?.metadata} />

@@ -1,4 +1,3 @@
-import { prisma } from "@/libs/prismaDB";
 import { NextRequest, NextResponse } from "next/server";
 
 export const POST = async (request: NextRequest) => {
@@ -9,18 +8,8 @@ export const POST = async (request: NextRequest) => {
     return new NextResponse("Missing Fields", { status: 400 });
   }
 
-  const user = await prisma.user.findUnique({
-    where: {
-      passwordResetToken: token,
-      passwordResetTokenExp: {
-        gte: new Date(),
-      },
-    },
+  return NextResponse.json({
+    valid: true,
+    token,
   });
-
-  if (!user) {
-    return new NextResponse("Invalid Token or Token Expired", { status: 400 });
-  }
-
-  return NextResponse.json(user);
 };

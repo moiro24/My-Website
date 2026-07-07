@@ -1,4 +1,6 @@
 "use client";
+export const dynamic = "force-dynamic";
+
 import PreviewGeneratedText from "@/components/AiTools/PreviewGeneratedText";
 import Breadcrumb from "@/components/Breadcrumb";
 import axios from "axios";

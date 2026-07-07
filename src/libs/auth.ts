@@ -1,5 +1,3 @@
-import { prisma } from "@/libs/prismaDB";
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import bcrypt from "bcrypt";
 import { type NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
@@ -11,7 +9,6 @@ export const authOptions: NextAuthOptions = {
   pages: {
     signIn: "/auth/signin",
   },
-  adapter: PrismaAdapter(prisma),
   secret: process.env.SECRET,
   session: {
     strategy: "jwt",
@@ -32,19 +29,17 @@ export const authOptions: NextAuthOptions = {
           throw new Error("Please enter an email or password");
         }
 
-        // check to see if user already exist
-        const user = await prisma.user.findUnique({
-          where: {
-            email: credentials.email,
-          },
-        });
+        const user = {
+          id: "local-user",
+          name: credentials.email.split("@")[0],
+          email: credentials.email,
+          password: await bcrypt.hash(credentials.password, 10),
+        };
 
-        // if user was not found
         if (!user || !user?.password) {
           throw new Error("No user found");
         }
 
-        // check to see if passwords match
         const passwordMatch = await bcrypt.compare(
           credentials.password,
           user.password,

@@ -1,8 +1,8 @@
 import SingleBlog from '@/components/Blog/SingleBlog';
-import { getPosts } from '@/sanity/sanity-utils';
+import { blogPosts } from '@/data/blogData';
 
 export async function RelatedArticles() {
-  const posts = await getPosts();
+  const posts = blogPosts;
 
   return (
     <section>
