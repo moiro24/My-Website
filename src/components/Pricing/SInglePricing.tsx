@@ -1,34 +1,10 @@
 'use client';
 
-import axios from 'axios';
+import Link from 'next/link';
 import Image from 'next/image';
 import OfferItem from './OfferItem';
-import { integrations, messages } from '@/lib/integrations';
-import toast from 'react-hot-toast';
 
 const SinglePricing = ({ price }: any) => {
-  // POST request
-  const handleSubscription = async (e: any) => {
-    e.preventDefault();
-
-    if (!integrations?.isStripeEnabled) {
-      toast.error(messages.stripe);
-      return;
-    }
-
-    const { data } = await axios.post(
-      '/api/payment',
-      {
-        priceId: price.id,
-      },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      },
-    );
-    window.location.assign(data);
-  };
 
   return (
     <div className='pricing-item-border bg-dark relative z-20 overflow-hidden rounded-3xl px-8 pt-12.5 pb-10 xl:px-10'>
@@ -102,23 +78,24 @@ const SinglePricing = ({ price }: any) => {
       )}
 
       <button
-        aria-label='Get the plan button'
-        onClick={handleSubscription}
+        aria-label='Contact for this plan'
         className='pricing-button-gradient hover:shadow-button relative mt-11 flex w-full items-center justify-center gap-1.5 rounded-lg p-3 font-medium text-white transition-all duration-300 ease-in-out'
       >
-        Get the plan
-        <svg
-          width='17'
-          height='16'
-          viewBox='0 0 17 16'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            d='M14.8992 7.5999L9.72422 2.3499C9.49922 2.1249 9.14922 2.1249 8.92422 2.3499C8.69922 2.5749 8.69922 2.9249 8.92422 3.1499L13.1242 7.4249H2.49922C2.19922 7.4249 1.94922 7.6749 1.94922 7.9749C1.94922 8.2749 2.19922 8.5499 2.49922 8.5499H13.1742L8.92422 12.8749C8.69922 13.0999 8.69922 13.4499 8.92422 13.6749C9.02422 13.7749 9.17422 13.8249 9.32422 13.8249C9.47422 13.8249 9.62422 13.7749 9.72422 13.6499L14.8992 8.3999C15.1242 8.1749 15.1242 7.8249 14.8992 7.5999Z'
-            fill='white'
-          />
-        </svg>
+        <Link href='/contact' className='w-full flex items-center justify-center gap-1.5'>
+          Get in touch
+          <svg
+            width='17'
+            height='16'
+            viewBox='0 0 17 16'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <path
+              d='M14.8992 7.5999L9.72422 2.3499C9.49922 2.1249 9.14922 2.1249 8.92422 2.3499C8.69922 2.5749 8.69922 2.9249 8.92422 3.1499L13.1242 7.4249H2.49922C2.19922 7.4249 1.94922 7.6749 1.94922 7.9749C1.94922 8.2749 2.19922 8.5499 2.49922 8.5499H13.1742L8.92422 12.8749C8.69922 13.0999 8.69922 13.4499 8.92422 13.6749C9.02422 13.7749 9.17422 13.8249 9.32422 13.8249C9.47422 13.8249 9.62422 13.7749 9.72422 13.6499L14.8992 8.3999C15.1242 8.1749 15.1242 7.8249 14.8992 7.5999Z'
+              fill='white'
+            />
+          </svg>
+        </Link>
       </button>
 
       <p className='mt-4 text-center text-sm'>No extra hidden charge</p>

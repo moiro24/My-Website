@@ -1,93 +1,56 @@
-## Getting Started with Open AI API
+﻿# Moises Rosas — Full-Stack Developer Portfolio
 
-### For Demo
+A clean, modern portfolio website showcasing React and JavaScript projects, built with Next.js 16, Tailwind CSS, and TypeScript.
 
-For testing the demo you have to add the api-key.
+## About Me
 
-- Got to /ai-examples
-- Click on the **Set API Key** button
+**Mechanic and U.S. Marine Corps Veteran** transitioning into software development. I bring military discipline, diagnostic precision, and hands-on troubleshooting experience to clean, reliable code. Focused on React, JavaScript, and building practical solutions.
 
-![Set Api Key](set-api-key.png)
+- **Background:** Fleet Mechanic (Colorado State Patrol) + Motor Transport Operator (U.S. Marine Corps)
+- **Current Focus:** Full-stack web development with React and JavaScript
+- **Skills:** React, JavaScript (ES6+), HTML5, CSS3, Next.js, Tailwind CSS, Git, responsive design, component architecture
 
-And save it.
+## Quick Start
 
-Once you are done testing you can remove the key from here:
+`ash
+npm install
+npm run dev
+`
 
-![Remove Api Key](remove-api-key.png)
+Visit [http://localhost:3000](http://localhost:3000)
 
-### For Developement
+## Deploy on Vercel
 
-For developement you have to save the Api-Key on the .env file with the follwing name
+1. Push to GitHub
+2. Go to [vercel.com](https://vercel.com) and import your repository
+3. Vercel auto-detects Next.js and builds automatically
+4. Done!
 
-```
-OPENAI_API_KEY=YOUR_API_KEY
-```
+**Build Command:** `npm run build`  
+**Output Directory:** .next (auto-configured)
 
-### How to change the model?
+## Project Structure
 
-By default we are using the `gpt-3.5-turbo` model.
-If you want to use other model you can do that too.
+- src/app/(site)/ — Main site pages
+- src/components/ — Reusable components
+- src/styles/tailwind.css — Global styles
+- src/api/contact/ — Contact form API
 
-To change the model, open up the template in your code editor.
-Then go to the route.ts file under **ai-examples** and add your prefered model
+## Key Features
 
-Note: You can find all the model from here: <https://platform.openai.com/docs/models/overview>
+✅ Responsive design  
+✅ Dark mode  
+✅ Contact form with rate limiting  
+✅ SEO optimized (OG tags, Twitter cards)  
+✅ TypeScript + Tailwind CSS  
+✅ Mobile-first  
 
-![Change model](change-model.png)
+## Contact
 
-## Installation and Configuration
-
-You must follow the documentation setp by step in this order to do a successful installation and configuration.
-
-### [AI Tool Installation and Config Docs](https://nextjstemplates.com/docs/templates#ai-tool)
+- **Email:** moiro2001@gmail.com
+- **GitHub:** [github.com/moiro24](https://github.com/moiro24)
+- **LinkedIn:** [linkedin.com/in/moises-rosas-a8366b185](https://linkedin.com/in/moises-rosas-a8366b185)
 
 ---
 
-### Deploying on PaaS
-
-If you are using a GitHub repo then you can go with free-of-cost and easy-to-use options like [Vercel](https://vercel.com/), or [Netlify](https://netlify.com/) they offer decent-free tiers for Next.js hosting.
-
-#### If you are using Prisma ORM (Comes with All Starter Templates)
-
-Make sure to edit build command like this while you use Prisma as ORM while deploying to Vercel.
-
-![prisma-vercel](https://nextjstemplates.com/docs/prisma-vercel.png)
-
-### Update Logs
-
-**December 2025:**
-
-- Updated to Next.js v16
-- Updated to Prisma v7
-
-**March 2025:**
-
-- Upgraded to TailwindCSS v4 and Next.js v15
-- Removed unused packages and fixed installation issues
-- Optimized font by importing from next/font/google
-- Refactored docs page:
-  - Rewrote sidebar and moved to layout file
-  - Using tailwind-typography plugin for content styles
-  - Fixed responsive issues
-- Proper links for sharing blogs
-
-**November 2024:**
-
-- Added integrations enable disble features
-- Integrated zod for Form validation
-- Removed package-lock.json file
-
-**February 2024:**
-
-- Updated Stripe Integraion: Loading pricing data from pricingData file
-
-**March 2024:**
-
-- Upgraded to next 14
-- Fixed auth issues
-- Updated all the packages
-- Update ts config & fix all the issues
-- Update signin & signup page design
-- Integrated Magic link signin &
-- Forgot password
-- Added loader on buttons
+**Built by Moises Rosas**
