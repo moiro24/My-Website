@@ -1,8 +1,8 @@
-"use client";
-import { useState } from "react";
-import SectionTitle from "../Common/SectionTitle";
-import SingleFaq from "./SingleFaq";
-import faqData from "./faqData";
+'use client';
+import { useState } from 'react';
+import SectionTitle from '../Common/SectionTitle';
+import SingleFaq from './SingleFaq';
+import faqData from './faqData';
 
 const Faq = () => {
   const [activeFaq, setActiveFaq] = useState(1);
@@ -12,18 +12,18 @@ const Faq = () => {
   };
 
   return (
-    <section className="relative overflow-hidden pb-17.5 pt-20 lg:pb-22.5 lg:pt-25 xl:pb-27.5">
+    <section className='relative overflow-hidden pt-20 pb-17.5 lg:pt-25 lg:pb-22.5 xl:pb-27.5'>
       {/* <!-- divider --> */}
-      <div className="about-divider-gradient absolute left-1/2 top-0 h-[1px] w-full max-w-[1170px] -translate-x-1/2"></div>
+      <div className='about-divider-gradient absolute top-0 left-1/2 h-[1px] w-full max-w-[1170px] -translate-x-1/2'></div>
 
-      <div className="mx-auto max-w-[770px] px-4 sm:px-8 xl:px-0">
+      <div className='mx-auto max-w-[770px] px-4 sm:px-8 xl:px-0'>
         <SectionTitle
-          subTitle="Questions About our AI Tool?"
-          title="Frequently Asked Questions"
-          paragraph="Build SaaS AI applications using OpenAI and Next.js, this kit comes with pre-configured and pre-built examples, making it easier to quickly kickstart your AI startup."
+          title='Questions?'
+          paragraph='Find answers about my development process, experience, and how I approach building clean, reliable web applications.'
+          hideBadge={true}
         />
 
-        <div className="wow fadeInUp">
+        <div>
           {faqData.map((faq: any, key: number) => (
             <SingleFaq
               key={key}

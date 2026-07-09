@@ -1,22 +1,32 @@
-import React from "react";
-import Breadcrumb from "@/components/Breadcrumb";
-import ForgotPassword from "@/components/Auth/ForgotPassword";
+import Link from 'next/link';
 
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Forgot Password | AI Tool - Next.js Template for AI Tools",
-  description: "This is Forgot Password page for AI Tool",
-  // other metadata
+export const metadata = {
+  title: 'Forgot password',
+  description:
+    'This portfolio site does not rely on the legacy auth demo flow.',
 };
 
-const ForgotPasswordPage = () => {
+export default function ForgotPasswordPage() {
   return (
-    <>
-      <Breadcrumb pageTitle="Forgot Password" />
-      <ForgotPassword />
-    </>
+    <section className='px-4 py-24 sm:px-8 lg:px-8'>
+      <div className='mx-auto max-w-3xl rounded-[2rem] border border-white/10 bg-white/8 p-10 text-center backdrop-blur-sm'>
+        <p className='text-sm tracking-[0.35em] text-cyan-300 uppercase'>
+          Portfolio update
+        </p>
+        <h1 className='mt-4 text-3xl font-semibold text-white sm:text-4xl'>
+          The legacy password recovery flow is paused.
+        </h1>
+        <p className='mt-5 text-lg leading-8 text-white/70'>
+          This site now centers on Moises Rosas’s portfolio, projects,
+          experience, and contact details.
+        </p>
+        <Link
+          href='/'
+          className='mt-8 inline-flex rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#030014] transition hover:scale-[1.02]'
+        >
+          Return to portfolio
+        </Link>
+      </div>
+    </section>
   );
-};
-
-export default ForgotPasswordPage;
+}

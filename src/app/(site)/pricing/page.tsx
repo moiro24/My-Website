@@ -1,20 +1,19 @@
-import Breadcrumb from "@/components/Breadcrumb";
-import Faq from "@/components/Faq";
-import PricingGrids from "@/components/Pricing/PricingGrids";
-
-import { Metadata } from "next";
+import Breadcrumb from '@/components/Breadcrumb';
+import Faq from '@/components/Faq';
+import PricingGrids from '@/components/Pricing/PricingGrids';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Pricing | AI Tool - Next.js Template for AI Tools",
-  description: "This is Pricing page for AI Tool",
-  // other metadata
+  title: 'Services & Pricing | Moises Rosas',
+  description:
+    'Available for freelance development, consulting, and project-based work. Flexible engagement models for React development, full-stack solutions, and technical consultation.',
 };
 
 const PricingPage = () => {
   return (
     <>
-      <Breadcrumb pageTitle="Pricing Page" />
-      <section className="pb-20 pt-17.5 lg:pb-25 lg:pt-22.5 xl:pt-27.5">
+      <Breadcrumb pageTitle='Services & Pricing' />
+      <section className='pt-17.5 pb-20 lg:pt-22.5 lg:pb-25 xl:pt-27.5'>
         <PricingGrids />
       </section>
 

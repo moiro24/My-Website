@@ -1,36 +1,45 @@
-import BlogSection from "@/components/Blog";
-import CallToAction from "@/components/CallToAction";
-import Clients from "@/components/Home/Clients";
-import Features from "@/components/Home/Features";
-import FeaturesList from "@/components/Home/FeaturesList";
-import Hero from "@/components/Home/Hero";
-import Reviews from "@/components/Home/Reviews";
-import Newsletter from "@/components/Newsletter";
-import Pricing from "@/components/Pricing";
-import Support from "@/components/Support";
-import { Metadata } from "next";
+import DeveloperPortfolio from '@/components/Portfolio/DeveloperPortfolio';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "AI Tool - Next.js Template for AI Tools",
-  description: "This is Home for AI Tool",
-  // other metadata
+  title: 'Moises Rosas | Full-Stack Developer & React Specialist',
+  description:
+    'Full-stack developer bringing military precision, diagnostic expertise, and React mastery to clean, reliable web applications. Marine Corps leadership. Vehicle diagnostics background. JavaScript & React portfolio.',
+  keywords: [
+    'React',
+    'JavaScript',
+    'Full-Stack Developer',
+    'Web Development',
+    'Marine Corps',
+  ],
+  openGraph: {
+    title: 'Moises Rosas | Full-Stack Developer',
+    description:
+      'Building thoughtful web experiences with React and JavaScript. Marine Corps leadership meets diagnostic precision.',
+    url: 'https://moisesrosas.dev',
+    type: 'website',
+    images: [
+      {
+        url: 'https://moisesrosas.dev/images/og-hero.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Moises Rosas - Full-Stack Developer',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Moises Rosas | Full-Stack Developer',
+    description:
+      'Building thoughtful web experiences with React and JavaScript.',
+    images: ['https://moisesrosas.dev/images/og-hero.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function Home() {
-  return (
-    <>
-      <Hero />
-      <Features />
-      <FeaturesList />
-      <Pricing />
-      <section className="relative z-20 overflow-hidden pb-20 pt-22.5 lg:pt-27.5 xl:pt-32.5 2xl:pt-45">
-        <Reviews />
-      </section>
-      <Clients />
-      <Support />
-      <BlogSection />
-      <CallToAction />
-      <Newsletter />
-    </>
-  );
+  return <DeveloperPortfolio />;
 }

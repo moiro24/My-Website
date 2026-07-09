@@ -1,9 +1,9 @@
-import { Metadata } from "next";
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Docs | AI Tool - Next.js Template for AI Tools",
-  description: "This is Docs page for AI Tool",
-  // other metadata
+  title: 'Documentation | Moises Rosas',
+  description:
+    'Technical documentation and resources for projects, code snippets, and development guides.',
 };
 
 export default function DocsPage() {

@@ -22,7 +22,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' className={plusJakarta.className}>
+    <html
+      lang='en'
+      className={plusJakarta.className}
+      data-theme='dark'
+      data-theme-mode='dark'
+    >
+      <head>
+        <link
+          rel='icon'
+          href='/images/logo/HalfLogo.svg'
+          type='image/svg+xml'
+        />
+        <link rel='apple-touch-icon' href='/images/logo/HalfLogo.svg' />
+        <meta name='theme-color' content='#030014' />
+      </head>
       <body>
         <div className='isolate'>
           <NextTopLoader

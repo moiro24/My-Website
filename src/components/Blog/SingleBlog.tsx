@@ -1,15 +1,19 @@
-import { Blog } from "@/types/blog";
-import Image from "next/image";
-import Link from "next/link";
+import { Blog } from '@/types/blog';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const SingleBlog = ({ blog }: { blog: Blog }) => {
   const { title, mainImage, slug, metadata, author, tags, publishedAt } = blog;
 
   return (
-    <div className='wow fadeInUp group relative isolate'>
+    <div className='group relative isolate'>
       <div className='relative mb-6 h-[222px] w-full overflow-hidden rounded-xl'>
         <Image
-          src={typeof mainImage === "string" ? mainImage : "/images/blog/default.jpg"}
+          src={
+            typeof mainImage === 'string'
+              ? mainImage
+              : '/images/blog/default.jpg'
+          }
           alt={title}
           fill
           className='w-full scale-100 duration-500 ease-linear group-hover:scale-125'
@@ -29,7 +33,7 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
 
       <h3>
         <Link
-          href={`/blog/${typeof slug === "string" ? slug : slug?.current}`}
+          href={`/blog/${typeof slug === 'string' ? slug : slug?.current}`}
           className='line-clamp-2 text-xl font-semibold text-white duration-300 ease-in hover:opacity-80'
         >
           <span className='absolute inset-0' aria-hidden></span>
