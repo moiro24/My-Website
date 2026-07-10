@@ -44,8 +44,8 @@ const Hero = () => {
           </p>
 
           <p className='mx-auto mb-9 max-w-[500px] font-medium md:text-lg'>
-            U.S. Marine Corps discipline meets diagnostics precision. Building clean,
-            responsive web applications with React and JavaScript.
+            U.S. Marine Corps discipline meets diagnostics precision. Building
+            clean, responsive web applications with React and JavaScript.
           </p>
 
           <Link
