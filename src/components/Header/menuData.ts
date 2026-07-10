@@ -27,9 +27,9 @@ const menuData: Menu[] = [
   },
   {
     id: 5,
-    title: 'Contact',
-    newTab: false,
-    path: '/contact',
+    title: 'Resume',
+    newTab: true,
+    path: '/resume.pdf',
   },
 ];
 export default menuData;
