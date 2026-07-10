@@ -78,7 +78,7 @@ const SinglePricing = ({ price }: any) => {
 
       <button
         aria-label='Contact for this plan'
-        className='pricing-button-gradient hover:shadow-button relative mt-11 flex w-full items-center justify-center gap-1.5 rounded-lg p-3 font-medium text-white transition-all duration-300 ease-in-out'
+        className='pricing-button-gradient hover:shadow-button relative mt-11 flex w-full items-center justify-center gap-1.5 rounded-lg p-3.5 sm:p-4 font-medium text-white transition-all duration-300 ease-in-out'
       >
         <Link
           href='/contact'

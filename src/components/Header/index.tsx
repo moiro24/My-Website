@@ -129,7 +129,7 @@ const Header = () => {
             <div className='mt-7 flex items-center gap-6 lg:mt-0'>
               <Link
                 href='/contact'
-                className='rounded-full border border-[var(--secondary-chip-border)] bg-[var(--secondary-chip-bg)] px-4 py-2 text-sm font-semibold tracking-[0.12em] text-[var(--secondary-chip-text)] uppercase transition hover:border-[var(--secondary-chip-hover-border)] hover:text-[var(--secondary-chip-hover-text)]'
+                className='rounded-full border border-[var(--secondary-chip-border)] bg-[var(--secondary-chip-bg)] px-5 py-2.5 sm:px-6 sm:py-3 text-sm font-semibold tracking-[0.12em] text-[var(--secondary-chip-text)] uppercase transition hover:border-[var(--secondary-chip-hover-border)] hover:text-[var(--secondary-chip-hover-text)]'
               >
                 Contact me
               </Link>

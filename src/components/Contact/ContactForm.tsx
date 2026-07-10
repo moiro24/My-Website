@@ -142,7 +142,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section className='px-4 pt-32 pb-24 sm:px-8 lg:px-8 lg:pt-36'>
+    <section className='px-4 pt-32 pb-24 sm:px-8 lg:px-0 lg:pt-36'>
       <div className='mx-auto grid w-full max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr]'>
         <div className='rounded-[2rem] border border-[var(--portfolio-border)] bg-[var(--portfolio-surface)] p-8 backdrop-blur-sm'>
           <p className='text-sm tracking-[0.35em] text-[#d2b07a] uppercase'>
@@ -268,7 +268,7 @@ export default function ContactForm() {
           <button
             type='submit'
             disabled={isSending || cooldownSeconds > 0}
-            className='mt-6 rounded-full bg-[var(--cta-bg)] px-7 py-3 text-sm font-semibold text-[var(--cta-text)] transition hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70'
+            className='mt-6 rounded-full bg-[var(--cta-bg)] px-8 py-3.5 sm:px-9 sm:py-4 text-sm font-semibold text-[var(--cta-text)] transition hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70'
           >
             {isSending
               ? 'Sending...'
