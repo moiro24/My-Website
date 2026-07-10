@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import { projectsData } from '@/data/projectsData';
 
 const skills = [
   'React',
@@ -22,32 +23,8 @@ const skills = [
   'Debugging & Troubleshooting',
 ];
 
-const projects = [
-  {
-    title: 'Metro Awnings Website',
-    type: 'Work in progress',
-    description:
-      'Developing a modern business website for a family-owned company using React, reusable components, and responsive layouts for desktop and mobile.',
-    stack: ['React', 'JavaScript', 'HTML5', 'CSS3', 'Vite'],
-    highlights: [
-      'Implementing interactive navigation and smoother user experience.',
-      'Using component-based architecture to improve maintainability.',
-      'Managing source code and version history in GitHub.',
-    ],
-  },
-  {
-    title: 'Additional Development Experience',
-    type: 'Coursework portfolio',
-    description:
-      'Completed multiple web-development projects through ERA Solutions veteran-focused software development courses.',
-    stack: ['React', 'JavaScript', 'HTML5', 'CSS3', 'Vite', 'npm'],
-    highlights: [
-      'Built hands-on projects covering React fundamentals and JavaScript programming.',
-      'Applied responsive web development and reusable UI patterns.',
-      'Practiced GitHub repositories, version control, and Chrome DevTools debugging.',
-    ],
-  },
-];
+// Filter featured projects only
+const projects = projectsData.filter((p) => p.featured);
 
 const experience = [
   {
@@ -87,7 +64,7 @@ const strengths = [
 
 export default function DeveloperPortfolio() {
   const [openProject, setOpenProject] = useState<string | null>(
-    projects[0].title,
+    projects[0]?.id || null,
   );
   const heroRef = useRef<HTMLElement | null>(null);
 
@@ -331,7 +308,7 @@ export default function DeveloperPortfolio() {
           <div className='mt-10 grid gap-6 lg:grid-cols-2'>
             {projects.map((project) => (
               <article
-                key={project.title}
+                key={project.id}
                 className='rounded-[2rem] border border-[var(--portfolio-border)] bg-[var(--portfolio-surface)] p-7 backdrop-blur-sm transition hover:-translate-y-1 hover:border-[var(--accent-warm)]/45'
               >
                 <div className='flex items-center justify-between gap-3'>
@@ -339,14 +316,14 @@ export default function DeveloperPortfolio() {
                     {project.title}
                   </h3>
                   <span className='rounded-full border border-[var(--project-type-border)] bg-[var(--project-type-bg)] px-3 py-1 text-xs tracking-[0.2em] text-[var(--project-type-text)] uppercase'>
-                    {project.type}
+                    {project.status || 'Completed'}
                   </span>
                 </div>
                 <p className='mt-4 text-base leading-8 text-[var(--portfolio-muted)]'>
                   {project.description}
                 </p>
                 <div className='mt-6 flex flex-wrap gap-2'>
-                  {project.stack.map((item) => (
+                  {project.tech.map((item) => (
                     <span
                       key={item}
                       className='rounded-full border border-[var(--portfolio-border)] bg-[var(--portfolio-surface-strong)] px-3 py-1.5 text-sm text-[var(--portfolio-text)]'
@@ -360,25 +337,33 @@ export default function DeveloperPortfolio() {
                   type='button'
                   onClick={() =>
                     setOpenProject((prev) =>
-                      prev === project.title ? null : project.title,
+                      prev === project.id ? null : project.id,
                     )
                   }
                   className='mt-6 rounded-full border border-[var(--secondary-chip-border)] bg-[var(--secondary-chip-bg)] px-4 py-2 text-xs font-semibold tracking-[0.12em] text-[var(--secondary-chip-text)] uppercase transition hover:border-[var(--secondary-chip-hover-border)] hover:text-[var(--secondary-chip-hover-text)]'
                 >
-                  {openProject === project.title
-                    ? 'Hide details'
-                    : 'View details'}
+                  {openProject === project.id ? 'Hide details' : 'View details'}
                 </button>
 
-                {openProject === project.title && (
-                  <ul className='mt-4 space-y-2 text-sm text-[var(--portfolio-muted)]'>
-                    {project.highlights.map((highlight) => (
-                      <li key={highlight} className='flex items-start gap-2'>
-                        <span className='mt-2 h-1.5 w-1.5 rounded-full bg-[var(--accent-warm)]' />
-                        <span>{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
+                {openProject === project.id && (
+                  <div className='mt-4 space-y-3 text-sm text-[var(--portfolio-muted)]'>
+                    <div>
+                      <p className='font-semibold text-[var(--portfolio-text)]'>Problem Solved:</p>
+                      <p className='mt-2'>{project.problemSolved}</p>
+                    </div>
+                    {project.github && (
+                      <div>
+                        <a
+                          href={project.github}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          className='inline-flex items-center gap-2 rounded-full border border-[var(--secondary-chip-border)] bg-[var(--secondary-chip-bg)] px-3 py-1.5 text-xs font-semibold tracking-[0.1em] text-[var(--secondary-chip-text)] uppercase transition hover:border-[var(--secondary-chip-hover-border)] hover:text-[var(--secondary-chip-hover-text)]'
+                        >
+                          View on GitHub →
+                        </a>
+                      </div>
+                    )}
+                  </div>
                 )}
               </article>
             ))}

@@ -1,7 +1,5 @@
 "use client";
-import "swiper/css";
-import { Autoplay } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+// Clients component not used in portfolio
 import SingleClient from "./SingleClient";
 import clientsData from "./clientsData";
 
@@ -10,28 +8,12 @@ const Clients = () => {
     <section className="py-19">
       <div className="mx-auto max-w-[1104px] px-4 sm:px-8 xl:px-0">
         <div className="relative z-10 overflow-hidden">
-          <span className="pointer-events-none absolute inset-0 left-0 top-1/2 z-10 block h-[37px] w-full max-w-[128px] -translate-y-1/2 bg-linear-to-l from-dark/0 to-dark/100"></span>
-          <span className="pointer-events-none absolute inset-0 left-auto top-1/2 z-10 block h-[37px] w-full max-w-[128px] -translate-y-1/2 bg-linear-to-r from-dark/0 to-dark/100"></span>
-          <div className="clients-carousel">
-            <Swiper
-              modules={[Autoplay]}
-              slidesPerView="auto"
-              spaceBetween={64}
-              loop={true}
-              speed={5000}
-              noSwiping={true}
-              noSwipingClass="swiper-slide w-auto"
-              autoplay={{
-                delay: 0,
-                disableOnInteraction: true,
-              }}
-            >
-              {clientsData.map((client) => (
-                <SwiperSlide key={client.id}>
-                  <SingleClient client={client} />
-                </SwiperSlide>
-              ))}
-            </Swiper>
+          <div className="grid gap-4 grid-cols-2 sm:grid-cols-4">
+            {clientsData.map((client) => (
+              <div key={client.id}>
+                <SingleClient client={client} />
+              </div>
+            ))}
           </div>
         </div>
       </div>
