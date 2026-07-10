@@ -1,5 +1,5 @@
-"use client";
-import { useRef } from "react";
+'use client';
+import { useRef } from 'react';
 
 // Docs feature not used in portfolio
 const DocsContent = ({ content }: any) => {
@@ -8,7 +8,7 @@ const DocsContent = ({ content }: any) => {
   return (
     <div ref={rootRef}>
       <div
-        className="blog-details"
+        className='blog-details'
         dangerouslySetInnerHTML={{ __html: content }}
       />
     </div>

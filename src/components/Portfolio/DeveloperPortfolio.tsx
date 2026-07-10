@@ -348,7 +348,9 @@ export default function DeveloperPortfolio() {
                 {openProject === project.id && (
                   <div className='mt-4 space-y-3 text-sm text-[var(--portfolio-muted)]'>
                     <div>
-                      <p className='font-semibold text-[var(--portfolio-text)]'>Problem Solved:</p>
+                      <p className='font-semibold text-[var(--portfolio-text)]'>
+                        Problem Solved:
+                      </p>
                       <p className='mt-2'>{project.problemSolved}</p>
                     </div>
                     {project.github && (
