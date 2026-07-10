@@ -22,8 +22,20 @@ const Header = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleStickyMenu);
-  });
+    const handleStickyMenuScroll = () => {
+      setStickyMenu(window.scrollY >= 80);
+    };
+
+    // Call once on mount to set initial state
+    handleStickyMenuScroll();
+
+    window.addEventListener('scroll', handleStickyMenuScroll);
+
+    // Cleanup: remove listener on unmount
+    return () => {
+      window.removeEventListener('scroll', handleStickyMenuScroll);
+    };
+  }, []);
 
   return (
     <>

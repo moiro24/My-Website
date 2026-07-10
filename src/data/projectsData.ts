@@ -7,6 +7,7 @@ export interface Project {
   image: string;
   github?: string;
   liveDemo?: string;
+  status?: 'Live' | 'In development' | 'Completed';
   featured: boolean;
 }
 
@@ -21,7 +22,7 @@ export const projectsData: Project[] = [
     tech: ['React', 'Next.js', 'Tailwind CSS', 'TypeScript', 'Nodemailer'],
     image: '/images/projects/metro-awnings.jpg',
     github: 'https://github.com/moiro24/metro-awnings',
-    liveDemo: 'https://metro-awnings.example.com',
+    status: 'In development',
     featured: true,
   },
   {
@@ -34,7 +35,7 @@ export const projectsData: Project[] = [
     tech: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
     image: '/images/projects/portfolio.jpg',
     github: 'https://github.com/moiro24/My-Website',
-    liveDemo: 'https://moises.dev',
+    status: 'Live',
     featured: true,
   },
   {

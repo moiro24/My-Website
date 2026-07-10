@@ -1,6 +1,15 @@
 ﻿# Moises Rosas — Full-Stack Developer Portfolio
 
-A clean, modern portfolio website showcasing React and JavaScript projects, built with Next.js 16, Tailwind CSS, and TypeScript.
+A responsive developer portfolio built with Next.js, TypeScript, React, and Tailwind CSS.
+
+## Getting Started
+
+\\\ash
+npm install
+npm run dev
+\\\
+
+Visit [http://localhost:3000](http://localhost:3000)
 
 ## About Me
 
@@ -10,40 +19,32 @@ A clean, modern portfolio website showcasing React and JavaScript projects, buil
 - **Current Focus:** Full-stack web development with React and JavaScript
 - **Skills:** React, JavaScript (ES6+), HTML5, CSS3, Next.js, Tailwind CSS, Git, responsive design, component architecture
 
-## Quick Start
-
-`ash
-npm install
-npm run dev
-`
-
-Visit [http://localhost:3000](http://localhost:3000)
-
-## Deploy on Vercel
-
-1. Push to GitHub
-2. Go to [vercel.com](https://vercel.com) and import your repository
-3. Vercel auto-detects Next.js and builds automatically
-4. Done!
-
-**Build Command:** `npm run build`  
-**Output Directory:** .next (auto-configured)
-
-## Project Structure
-
-- src/app/(site)/ — Main site pages
-- src/components/ — Reusable components
-- src/styles/tailwind.css — Global styles
-- src/api/contact/ — Contact form API
-
-## Key Features
+## Features
 
 ✅ Responsive design  
 ✅ Dark mode  
 ✅ Contact form with rate limiting  
 ✅ SEO optimized (OG tags, Twitter cards)  
 ✅ TypeScript + Tailwind CSS  
-✅ Mobile-first  
+✅ Mobile-first
+
+## Project Structure
+
+- \src/app/\ — Next.js app router pages
+- \src/components/\ — Reusable React components
+- \src/data/\ — Static data (projects, skills, experience)
+- \src/styles/\ — Global styles and Tailwind configuration
+- \public/\ — Static assets and resume PDF
+
+## Deploy on Vercel
+
+1. Push to GitHub
+2. Go to [vercel.com](https://vercel.com) and import your repository
+3. Vercel auto-detects Next.js and builds automatically
+
+**Build Command:** \
+pm run build\  
+**Output Directory:** \.next\
 
 ## Contact
 
