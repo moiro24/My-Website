@@ -5,7 +5,6 @@ import Image from 'next/image';
 import OfferItem from './OfferItem';
 
 const SinglePricing = ({ price }: any) => {
-
   return (
     <div className='pricing-item-border bg-dark relative z-20 overflow-hidden rounded-3xl px-8 pt-12.5 pb-10 xl:px-10'>
       <span className='absolute top-9 right-9'>
@@ -81,7 +80,10 @@ const SinglePricing = ({ price }: any) => {
         aria-label='Contact for this plan'
         className='pricing-button-gradient hover:shadow-button relative mt-11 flex w-full items-center justify-center gap-1.5 rounded-lg p-3 font-medium text-white transition-all duration-300 ease-in-out'
       >
-        <Link href='/contact' className='w-full flex items-center justify-center gap-1.5'>
+        <Link
+          href='/contact'
+          className='flex w-full items-center justify-center gap-1.5'
+        >
           Get in touch
           <svg
             width='17'
