@@ -47,7 +47,7 @@ const Hero = () => {
 
           <Link
             href='/contact'
-            className='hero-button-gradient inline-flex rounded-lg px-8 py-3 sm:px-9 sm:py-3.5 font-medium text-white duration-300 ease-in hover:opacity-80'
+            className='hero-button-gradient inline-flex rounded-lg px-8 py-3 font-medium text-white duration-300 ease-in hover:opacity-80 sm:px-9 sm:py-3.5'
           >
             Get in touch
           </Link>

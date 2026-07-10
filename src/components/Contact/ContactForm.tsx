@@ -268,7 +268,7 @@ export default function ContactForm() {
           <button
             type='submit'
             disabled={isSending || cooldownSeconds > 0}
-            className='mt-6 rounded-full bg-[var(--cta-bg)] px-8 py-3.5 sm:px-9 sm:py-4 text-sm font-semibold text-[var(--cta-text)] transition hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70'
+            className='mt-6 rounded-full bg-[var(--cta-bg)] px-8 py-3.5 text-sm font-semibold text-[var(--cta-text)] transition hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70 sm:px-9 sm:py-4'
           >
             {isSending
               ? 'Sending...'
