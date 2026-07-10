@@ -33,16 +33,19 @@ const Hero = () => {
               height={16}
             />
 
-            <span className='hero-subtitle-text'>Full-Stack Developer</span>
+            <span className='hero-subtitle-text'>Developer in Training</span>
           </span>
           <h1 className='xl:text-heading-1 mb-6 text-3xl font-extrabold text-white sm:text-5xl'>
-            React specialist. Marine Corps leadership. Diagnostic precision.
+            Moises Rosas — Front-End & Full-Stack Developer
           </h1>
 
+          <p className='mx-auto mb-4 max-w-[500px] font-semibold text-blue-300 md:text-lg'>
+            React • JavaScript • SQL • Veteran • Mechanic turned developer
+          </p>
+
           <p className='mx-auto mb-9 max-w-[500px] font-medium md:text-lg'>
-            Building thoughtful web experiences with React and JavaScript.
-            Bringing military discipline, troubleshooting rigor, and vehicle
-            diagnostics methodology to clean code and reliable systems.
+            U.S. Marine Corps discipline meets diagnostics precision. Building clean,
+            responsive web applications with React and JavaScript.
           </p>
 
           <Link

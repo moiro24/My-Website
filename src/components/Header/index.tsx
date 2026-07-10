@@ -126,7 +126,14 @@ const Header = () => {
               </ul>
             </nav>
 
-            <div className='mt-7 flex items-center gap-6 lg:mt-0'>
+            <div className='mt-7 flex items-center gap-4 lg:mt-0'>
+              <a
+                href='/resume.pdf'
+                download='Moises_Rosas_Resume.pdf'
+                className='rounded-full border border-[var(--secondary-chip-border)] bg-transparent px-4 py-2 sm:px-5 sm:py-2.5 text-xs font-semibold tracking-[0.08em] text-[var(--secondary-chip-text)] uppercase transition hover:border-[var(--secondary-chip-hover-border)] hover:text-[var(--secondary-chip-hover-text)]'
+              >
+                Resume
+              </a>
               <Link
                 href='/contact'
                 className='rounded-full border border-[var(--secondary-chip-border)] bg-[var(--secondary-chip-bg)] px-5 py-2.5 text-sm font-semibold tracking-[0.12em] text-[var(--secondary-chip-text)] uppercase transition hover:border-[var(--secondary-chip-hover-border)] hover:text-[var(--secondary-chip-hover-text)] sm:px-6 sm:py-3'
